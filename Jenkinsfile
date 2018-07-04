@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage("Build (Compiling)") {
       steps {
-        sh "vendor/sonar-runner/bin/sonar-runner"
+        sh "mvn clean install"
       }
     }
     stage("Code Analysis (SonarQube)") {
