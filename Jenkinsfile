@@ -2,14 +2,14 @@ pipeline {
   agent any 
 
   stages {
+    stage("Code Analysis (SonarQube)") {
+      steps {
+        sh "mvn sonar:sonar -Dsonar.host.url=http://172.17.0.2 -Dsonar.login=910b8ebec527e613c689199d3097e1960ea927c3"
+      }
+    }
     stage("Build (Compiling)") {
       steps {
         sh "mvn install"
-      }
-    }
-    stage("Code Analysis (SonarQube)") {
-      steps {
-        sh "mvn sonar:sonar -Dsonar.host.url=http://127.0.1.1:9000 -Dsonar.login=910b8ebec527e613c689199d3097e1960ea927c3"
       }
     }
     stage("Unit Test (JUnit)") {
