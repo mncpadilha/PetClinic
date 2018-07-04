@@ -19,7 +19,7 @@ pipeline {
     }
     stage("Publish (Deploy)") {
       steps {
-        sh "vendor/sonar-runner/bin/sonar-runner"
+        sh "mvn clean deploy -Dmaven.test.skip=true"
       }
     }
   }
