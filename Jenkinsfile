@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage("Build (Compiling)") {
       steps {
-        sh "mvn clean install"
+        sh "mvn install"
       }
     }
     /*stage("Code Analysis (SonarQube)") {
