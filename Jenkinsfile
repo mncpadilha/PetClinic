@@ -9,7 +9,7 @@ pipeline {
     }
     /*stage("Code Analysis (SonarQube)") {
       steps {
-        sh "vendor/sonar-runner/bin/sonar-runner"
+        sh ""
       }
     }*/
     stage("Unit Test (JUnit)") {
