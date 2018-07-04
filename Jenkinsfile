@@ -17,10 +17,10 @@ pipeline {
         sh "mvn test"
       }
     }
-    stage("Publish (Deploy)") {
+    /*stage("Publish (Deploy)") {
       steps {
         sh "mvn clean deploy -Dmaven.test.skip=true"
       }
-    }
+    }*/
   }
 }
