@@ -7,11 +7,11 @@ pipeline {
         sh "mvn install"
       }
     }
-    /*stage("Code Analysis (SonarQube)") {
+    stage("Code Analysis (SonarQube)") {
       steps {
-        sh ""
+        sh "mvn sonar:sonar -Dsonar.host.url=http://127.0.1.1:9000 -Dsonar.login=910b8ebec527e613c689199d3097e1960ea927c3"
       }
-    }*/
+    }
     stage("Unit Test (JUnit)") {
       steps {
         sh "mvn test"
